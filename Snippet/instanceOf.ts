@@ -15,7 +15,7 @@ function _instanceof(left,right): boolean{
 }
 
 function A(){
-
+    //
 }
 const instanceA = new A();
 
