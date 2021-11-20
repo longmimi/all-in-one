@@ -14,9 +14,23 @@ function _instanceof(left,right): boolean{
     }
 }
 
+function instanceOf(father, child) {
+    const fp = father.prototype
+    var cp = child.__proto__
+
+    while (cp) {
+        if (cp === fp) {
+            return true
+        }
+        cp = cp.__proto__
+    }
+
+    return false
+}
+
 function A(){
     //
 }
 const instanceA = new A();
 
-console.log(_instanceof(instanceA,A))
+console.log(instanceOf(A,instanceA))
